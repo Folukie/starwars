@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
 import React from 'react'
 
 const CardItem = ({
@@ -13,7 +14,7 @@ const CardItem = ({
 }) => {
   return (
     <div className="md:flex md:space-x-6">
-      <img src={image} alt="film icon" />
+      <Image src={image} alt="film icon" width={350} height={350} />
       <div>
         <h1 className="font-bold text-3xl">{title}</h1>
         <p className="font-bold text-sm">
