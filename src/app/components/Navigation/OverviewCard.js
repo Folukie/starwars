@@ -3,7 +3,7 @@ import { OverviewItems } from '../../constants/navigation'
 
 const OverviewCard = () => {
   return (
-    <div className="md:flex justify-between space-y-8 md:space-y-0 md:space-x-2 w-11/12">
+    <div className="md:flex justify-between space-y-8 md:space-y-0 md:space-x-2 w-11/12 mx-auto md:mx-0">
       {OverviewItems.map((item, idx) => (
         <div key={idx} className="shadow-md p-5 py-6 rounded-md space-y-6">
           <div className="flex justify-between">

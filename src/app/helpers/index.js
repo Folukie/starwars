@@ -14,3 +14,13 @@ export const formatBirthYear = (year) => {
 export const validateEmail = (email) => {
   return validator.isEmail(email)
 }
+export const validatePassword = (password) => {
+  if (password.length < 6) {
+    return false
+  }
+
+  const hasLetters = /[a-zA-Z]/.test(password)
+  const hasNumbers = /\d/.test(password)
+
+  return hasLetters && hasNumbers
+}

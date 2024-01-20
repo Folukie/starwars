@@ -66,6 +66,7 @@ const Table = (props, { onRowClicked }) => {
       pagination
       selectableRows
       selectableRowsSingle
+      pointerOnHover
     />
   )
 }

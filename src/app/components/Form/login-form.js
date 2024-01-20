@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Input from './Input'
 import Button from './Button'
-import { validateEmail } from '@/app/helpers'
+import { validateEmail, validatePassword } from '@/app/helpers'
 import { useRouter } from 'next/navigation'
 
 const LoginForm = () => {
@@ -21,7 +21,7 @@ const LoginForm = () => {
   }
   return (
     <form
-      className=" rounded-xl border border-grey py-10 px-20 w-max mx-auto "
+      className="rounded-xl border border-grey py-4 md:py-10 px-4 md:px-20 w-10/12 md:w-max mx-auto "
       onSubmit={handleSubmit}
     >
       <div className="space-y-16 ">
@@ -29,14 +29,21 @@ const LoginForm = () => {
           <h3 className="font-medium text-lg">Login</h3>
           <p className="text-sm">Kindly enter your details to log in</p>
         </div>
-        <div className="space-y-10 w-80">
-          <Input
-            title={'Email Address'}
-            name="email"
-            value={loginData.email}
-            type="email"
-            onChange={handleChange}
-          />
+        <div className="space-y-12 md:space-y-10 w-full md:w-80">
+          <div className="relative">
+            <Input
+              title={'Email Address'}
+              name="email"
+              value={loginData.email}
+              type="email"
+              onChange={handleChange}
+            />
+            {loginData.email && !validateEmail(loginData.email) && (
+              <p className="text-xs font-bold text-red-500 absolute right-0  md:-bottom-5">
+                Incorrect Email
+              </p>
+            )}
+          </div>
           <div className="relative">
             <Input
               title={'Password'}
@@ -45,9 +52,10 @@ const LoginForm = () => {
               type="password"
               onChange={handleChange}
             />
-            {loginData.email && !validateEmail(loginData.email) && (
-              <p className="text-xs font-bold text-primary absolute right-0 -bottom-5">
-                Incorrect Email
+
+            {loginData.password && !validatePassword(loginData.password) && (
+              <p className="text-xs font-bold text-red-500 absolute right-0 md:-bottom-5">
+                Password must include letters and numbers
               </p>
             )}
           </div>
@@ -57,7 +65,8 @@ const LoginForm = () => {
               !(
                 loginData.email &&
                 loginData.password &&
-                validateEmail(loginData.email)
+                validateEmail(loginData.email) &&
+                validatePassword(loginData.password)
               )
             }
           />

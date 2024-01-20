@@ -1,14 +1,18 @@
-'use client' /* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { Navigations } from '../../constants/navigation'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const SideNav = () => {
+const MobileSideNav = ({ close, isOpen }) => {
   const pathname = usePathname()
 
   return (
-    <nav className="hidden md:block bg-primary relative z-20 h-screen min-h-full overflow-x-hidden overflow-y-auto px-10 py-8 w-64">
+    <nav
+      className={`bg-primary sidebar h-screen p-4 w-full left-0 block transition-all duration-300 transform ${
+        isOpen ? '-translate-x-full' : ''
+      }`}
+    >
       <div className="flex justify-center">
         <img alt="star wars icon" src="/images/starwars.png" className="w-28" />
       </div>
@@ -22,6 +26,7 @@ const SideNav = () => {
           <img src="/images/overview.svg" alt="overview-icon" className="w-6" />
           Overview
         </Link>
+        <p className="bg-blue bg-pink bg-yellow  bg-green hidden"></p>
         <ul className="space-y-5">
           {Navigations.map((navItem, idx) => (
             <li
@@ -52,4 +57,4 @@ const SideNav = () => {
   )
 }
 
-export default SideNav
+export default MobileSideNav

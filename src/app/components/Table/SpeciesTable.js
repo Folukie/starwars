@@ -9,7 +9,7 @@ const SpeciesTable = ({ data }) => {
   return (
     <Table
       data={data}
-      onRowClicked={(row) => router.push(`${pathname}/${row.episode_id}`)}
+      onRowClicked={(row) => router.push('/pages/item')}
       columns={[
         {
           name: 'Name',
