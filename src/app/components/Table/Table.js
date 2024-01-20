@@ -14,7 +14,6 @@ const rowTheme = {
     fontColorActive: 'rgba(255, 255, 255, 0.85)',
   },
   rows: {
-    // spaced allows the following properties
     spacing: 'spaced',
     spacingBorderRadius: '0.25rem',
     spacingMargin: '.5rem',

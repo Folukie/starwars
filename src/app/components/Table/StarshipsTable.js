@@ -1,10 +1,9 @@
 import Table from '@/app/components/Table/Table'
 import React from 'react'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const StarshipsTable = ({ data }) => {
   const router = useRouter()
-  const pathname = usePathname()
   return (
     <Table
       data={data}

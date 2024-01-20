@@ -1,11 +1,10 @@
 import Table from '@/app/components/Table/Table'
 import React from 'react'
 import { formatDate } from '../../helpers/index'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const SpeciesTable = ({ data }) => {
   const router = useRouter()
-  const pathname = usePathname()
   return (
     <Table
       data={data}

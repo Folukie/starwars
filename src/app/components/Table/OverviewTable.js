@@ -1,5 +1,4 @@
 import Table from '@/app/components/Table/Table'
-import TableSkeleton from '@/app/components/Table/TableSkeleton'
 import React from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 
