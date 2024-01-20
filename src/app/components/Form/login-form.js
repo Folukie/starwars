@@ -29,7 +29,7 @@ const LoginForm = () => {
           <h3 className="font-medium text-lg">Login</h3>
           <p className="text-sm">Kindly enter your details to log in</p>
         </div>
-        <div className="space-y-12 md:space-y-10 w-full md:w-80">
+        <div className="space-y-14 md:space-y-12 w-full md:w-80">
           <div className="relative">
             <Input
               title={'Email Address'}
@@ -39,7 +39,7 @@ const LoginForm = () => {
               onChange={handleChange}
             />
             {loginData.email && !validateEmail(loginData.email) && (
-              <p className="text-xs font-bold text-red-500 absolute right-0  md:-bottom-5">
+              <p className="text-xs text-red-500 absolute right-0  md:-bottom-5">
                 Incorrect Email
               </p>
             )}
@@ -54,8 +54,9 @@ const LoginForm = () => {
             />
 
             {loginData.password && !validatePassword(loginData.password) && (
-              <p className="text-xs font-bold text-red-500 absolute right-0 md:-bottom-5">
-                Password must include letters and numbers
+              <p className="text-xs text-red-500 absolute right-0 md:-bottom-9">
+                Password must be atleast 6 characters and must contain letters
+                and numbers
               </p>
             )}
           </div>
