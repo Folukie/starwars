@@ -34,9 +34,9 @@ const OverviewCard = () => {
     fetchAllDataCount()
   }, [])
   return (
-    <div className="md:flex justify-between space-y-8 md:space-y-0 md:space-x-2 w-11/12 mx-auto md:mx-0">
+    <div className="md:flex justify-between space-y-8 md:space-y-0 md:space-x-2 mx-auto md:mx-0 w-full  md:w-10/12">
       {OverviewItems.map((item, idx) => (
-        <div key={idx} className="shadow-md p-5 py-6 rounded-md space-y-6">
+        <div key={idx} className="shadow-md p-6 rounded-md space-y-6">
           <div className="flex justify-between">
             <p className="text-primary-light font-medium">{item.name}</p>
             <p className={`h-5 w-5 rounded-sm bg-${item.color}`}></p>

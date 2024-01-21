@@ -24,15 +24,17 @@ const Overview = () => {
     <DashboardLayout>
       <div className=" mt-20 space-y-16">
         <OverviewCard />
-        <div className="space-y-8">
+        <div className="space-y-8 w-11/2">
           <p className="font-light text-sm text-lightgrey">Films</p>
-          {films ? (
-            <div className="border border-greylight rounded-sm ">
-              <OverviewTable data={films.results} />
-            </div>
-          ) : (
-            <Loading />
-          )}
+          <div className="w-11/12">
+            {films ? (
+              <div className="border border-greylight rounded-sm ">
+                <OverviewTable data={films.results} />
+              </div>
+            ) : (
+              <Loading />
+            )}
+          </div>
         </div>
       </div>
     </DashboardLayout>
