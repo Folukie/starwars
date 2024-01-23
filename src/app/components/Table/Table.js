@@ -4,6 +4,7 @@ import { Checkbox } from '@mui/material'
 import React from 'react'
 import DataTable from 'react-data-table-component'
 import styled from 'styled-components'
+import { Loading } from '../Form/Loading'
 
 const rowTheme = {
   header: {
@@ -66,6 +67,7 @@ const Table = (props, { onRowClicked }) => {
       selectableRows
       selectableRowsSingle
       pointerOnHover
+      noDataComponent={<Loading />}
     />
   )
 }

@@ -1,7 +1,6 @@
 'use client'
 import React, { useContext } from 'react'
 import DashboardLayout from '@/app/components/Layout/DashboardLayout'
-import { Loading } from '@/app/components/Form/Loading'
 import OverviewTable from '@/app/components/Table/OverviewTable'
 import OverviewCard from '@/app/components/Navigation/OverviewCard'
 import DataContext from '../../../contexts/DataContext'
@@ -16,12 +15,10 @@ const Overview = () => {
         <div className="space-y-8 w-11/2">
           <p className="font-light text-sm text-lightgrey">Films</p>
           <div className="w-11/12">
-            {data.films ? (
+            {data.films && (
               <div className="border border-greylight rounded-sm ">
                 <OverviewTable data={data.films.results} />
               </div>
-            ) : (
-              <Loading />
             )}
           </div>
         </div>
