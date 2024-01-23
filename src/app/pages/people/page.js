@@ -1,31 +1,20 @@
 'use client'
 import DashboardLayout from '@/app/components/Layout/DashboardLayout'
-import React, { useEffect, useState } from 'react'
-import { getPeople } from '@/api/people'
+import React, { useContext } from 'react'
 import PeopleTable from '../../components/Table/PeopleTable'
 import { Loading } from '@/app/components/Form/Loading'
+import DataContext from '../../../contexts/DataContext'
 
 const Pages = () => {
-  const [people, setPeople] = useState()
+  const { data } = useContext(DataContext)
 
-  useEffect(() => {
-    const fetchAllPeople = async () => {
-      try {
-        const people = await getPeople()
-        setPeople(people)
-      } catch (error) {
-        console.error('error')
-      }
-    }
-    fetchAllPeople()
-  }, [])
   return (
     <DashboardLayout>
       <div className="mt-20 space-y-8 w-11/12">
         <p className="font-light text-sm text-lightgrey">People</p>
-        {people ? (
+        {data.people ? (
           <div className="border border-greylight rounded-sm ">
-            <PeopleTable data={people.results} />
+            <PeopleTable data={data.people.results} />
           </div>
         ) : (
           <Loading />
